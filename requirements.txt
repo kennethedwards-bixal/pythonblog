@@ -1,0 +1,4 @@
+Django>=3.0,<4.0
+django_taggit
+markdown
+psycopg2-binary

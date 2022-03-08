@@ -1,0 +1,22 @@
+version: '3'
+services: 
+  meleblog:
+    build: .
+    ports: 
+      - "8000:8000"
+    volumes:
+      - ".:/app"
+    depends_on:
+      - db
+  db:
+    image: postgres
+    container_name: mele-postgres-db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+volumes:
+  pgdata:
